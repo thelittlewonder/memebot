@@ -8,12 +8,12 @@ const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 let sendToWhatsapp = function (search, phone, count) {
   let toNumber = 'whatsapp:+91' + phone
-  let numberOfMemes = 3;
+  let numberOfMemes = 1;
   if (count !== null) {
     numberOfMemes = count
   }
   ddg.image_search({
-    query: search + ' meme',
+    query: search + ' meme template',
     iterations: 1,
     moderate: false
   }).then(results => {
