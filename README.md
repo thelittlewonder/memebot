@@ -4,11 +4,11 @@
 ## Usage
 ![forthebadge](https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)
 
-`<template name>, count` where count is optional
+`<template name>, count` where count is an optional parameter specifying number of images returned.
 
 Examples: 
-* `i am in danger, 3`
-* `i am once again asking for your financial support`
+* `i am in danger, 3` – returns top 3 image for the query
+* `i am once again asking for your financial support` – returns 1 image for the query
 
 
 ## Setting up
