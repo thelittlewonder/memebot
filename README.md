@@ -27,3 +27,5 @@ TWILIO_AUTH_TOKEN = Twilio Authorisation Token (obtained from Twilio)
 SANDBOX_NUMBER = The twilio number with which you interact (obtained from Twilio)
 
 ```
+
+### Reference: [Build a WhatsApp bot in 30 minutes](https://repl.it/talk/learn/Build-a-WhatsApp-bot-in-30-minutes/7673)
