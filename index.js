@@ -7,7 +7,7 @@ const sandboxNumber = process.env.SANDBOX_NUMBER;
 const client = require('twilio')(accountSid, authToken);
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
-let sendToWhatsapp = function (search, phone, count) {
+let sendToWhatsapp = function(search, phone, count) {
   let toNumber = 'whatsapp:+91' + phone
   let numberOfMemes = 1;
   if (count !== null) {
@@ -18,14 +18,22 @@ let sendToWhatsapp = function (search, phone, count) {
     iterations: 1,
     moderate: false
   }).then(results => {
-    for (let i = 0; i < numberOfMemes; i++) {
-      client.messages
-        .create({
-          from: 'whatsapp:'+sandboxNumber,
-          to: toNumber,
-          mediaUrl: results[i].image
-        })
-        .then(message => console.log(message.status))
+    if (results.length > 0) {
+      for (let i = 0; i < numberOfMemes; i++) {
+        client.messages
+          .create({
+            from: 'whatsapp:+14155238886',
+            to: toNumber,
+            mediaUrl: results[i].image
+          })
+          .then(message => console.log(message.status))
+      }
+    } else {
+      client.messages.create({
+        from: 'whatsapp:+14155238886',
+        to: toNumber,
+        body: '😔 No matching memes found, please refine your search query.'
+      }).then(message => console.log(message.status))
     }
   })
 }
